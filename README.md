@@ -3,5 +3,5 @@
 
 This repository contains library of tutorials for the tools commonly used in the academic environment.
 
-Contenst:
+Potato:
  - [git](./git.md)
