@@ -1,1 +1,1 @@
-$\int_{-\inf}^{\inf} x \: dx $
+$f(x)= \frac{1}{2\pi} \int_{-\infty}^{\infty} \omega \exp{-i 2 \pi \omega x} \: d\omega $
