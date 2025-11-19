@@ -1,1 +1,1 @@
-%\int_{-\inf}^{\inf} x \: dx %
+$\int_{-\inf}^{\inf} x \: dx $
