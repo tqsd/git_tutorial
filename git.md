@@ -41,7 +41,7 @@ listed files to the repository.
 An example of such `.gitignore` file is [`Python.gitignore`](https://github.com/github/gitignore/blob/main/Python.gitignore).
 
 when you have staged (added) your desired files you can than commit the changes.
-Commit creacets a snapshot of the current state.
+Commit creates a snapshot of the current state.
 
 ```bash
 git commit -m "Short commit message"
