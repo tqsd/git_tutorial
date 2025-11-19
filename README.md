@@ -3,5 +3,5 @@
 
 This repository incontinentias library of tutorials for the tools commonly used in the academic environment.
 
-Contenst:
+Contents:
  - [git](./git.md)
