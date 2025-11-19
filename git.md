@@ -2,6 +2,110 @@
 
 Git is an open source versioning software.
 
+## How to use
+
+When editing an existing project on your local machine, you need to clone it first
+
+```bash
+git clone git@github.com:USERNAME/REPO.git
+cd REPO
+```
+
+The link can be coppied from git repository website.
+
+### Core Loop
+
+The core git usage loop is:
+edit -> status -> add -> commit -> push
+
+When you edit your git project the updated files are displayed with command
+```bash
+git status
+```
+
+To start tracking files you can add them individually:
+```bash
+git add file1.py
+```
+
+or all together
+```bash
+git add .
+```
+Then with the use of `git status` you can check which files are staged (added).
+
+You can make use of `.gitignore` file to make sure some files are not tracked.
+Generally you want to omit tracking the cache files and environment files. Usually you can just copy existing `.gitignore` template to the root of your project and the git will then avoid adding the
+listed files to the repository.
+
+An example of such `.gitignore` file is [`Python.gitignore`](https://github.com/github/gitignore/blob/main/Python.gitignore).
+
+when you have staged (added) your desired files you can than commit the changes.
+Commit creacets a snapshot of the current state.
+
+```bash
+git commit -m "Short commit message"
+```
+
+And lastly you can push to the repository
+```bash
+git push origin <branch>
+```
+
+### Branches and merging
+
+You almost never want to work directly on `master`/`main`/`trunk` branch. You will want to work on a feature branch. To create a branch:
+
+```bash
+git checkout master
+git pull origin master # update first
+git checkout -b new-branch-name
+```
+
+This activates creates and activates the new branch `new-branch-name`.
+After making changes you then do
+
+```bash
+git add .
+git commit -m "Implemented feature on new branch"
+git push -u origin new-branch-name
+```
+
+the `-u` sets the upstream so that later you can just `git push`.
+
+#### Merging
+
+When you want to merge the codebase in two branches you can
+do the following:
+```bash
+git checkout master  # swich back to the master branch
+git pull origin master # Check if some updates were submitted to the master branch
+git merge new-branch-name  # Merge the newely created branch into master
+git push
+```
+The merging process will let you know if there are some conflicts. If there are they must be fixed manually. If not the merge process will automatically commit the changes.
+
+If there is a merge conflict the `git merge` will let you know and the conflicts will be
+marked like:
+```bash
+<<<<<<< HEAD
+your version on current branch
+=======
+other branch’s version
+>>>>>>> new-branch-name
+```
+You must manually remove the git marks and select which version you want to keep or rewrite it completely.
+
+Then again you need to add, comit push
+
+```bash
+git add conflicted_file.py
+git commit
+# or
+git merge --continue
+```
+
+
 ## Installation
 
 On Linux systems git is usually installed out of the box.
